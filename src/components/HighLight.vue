@@ -3,7 +3,7 @@
     <router-link :to="`/${index},${section},${slugfy(content.title)}`" @click="selectItem()">
       <VueLoadImage>
         <img slot="image" :src="content.multimedia[0].url" v-if="content.multimedia[0].url" />
-        <img slot="preloader" src="@/assets/image-loader.gif" />
+        <img slot="preloader" class="preloader" src="@/assets/image-loader.gif" />
       </VueLoadImage>
       <div>
         <strong>{{content.title}}</strong>

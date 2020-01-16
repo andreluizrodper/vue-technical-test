@@ -54,6 +54,10 @@ strong {
 }
 img {
   max-width: 100%;
+  &.preloader {
+    margin: 0 auto;
+    display: block;
+  }
 }
 small {
   display: block;
