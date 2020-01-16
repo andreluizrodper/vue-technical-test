@@ -18,6 +18,9 @@ export default {
     SectionLoading,
   },
   mounted() {
+    if (this.$route.params.section) {
+      this.$store.commit('toggleSection', this.$route.params.section);
+    }
     this.$store.dispatch('getStories');
   },
 };

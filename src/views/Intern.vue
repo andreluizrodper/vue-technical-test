@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="content">
     <div class="breadcrumb">
       <router-link to="/">Home</router-link> >
       {{content.title}}
@@ -26,8 +26,17 @@ export default {
   name: 'intern',
   data() {
     return {
-      content: this.$store.state.list[this.$route.params.index],
+      content: {},
     };
+  },
+  mounted() {
+    this.$store.subscribe((mutation, state) => {
+      if (['toggleList'].indexOf(mutation.type) >= 0) {
+        this.content = state.list[this.$route.params.index];
+        this.$store.commit('toggleLoading', false);
+      }
+    });
+    this.content = this.$store.state.list[this.$route.params.index];
   },
 };
 </script>
