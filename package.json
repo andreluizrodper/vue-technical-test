@@ -10,6 +10,8 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@reststate/vuex": "^0.2.0",
+    "axios": "^0.19.1",
     "core-js": "^3.4.4",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
